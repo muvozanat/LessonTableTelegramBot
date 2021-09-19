@@ -1,6 +1,11 @@
-const telegramApiBot = require("node-telegram-bot-api");
-const token = "2031323019:AAE9hiIng2APgdr03SQor9_6pamXDsVeGNI";
-const bot = new telegramApiBot(token, { polling: true });
+var TelegramBot = require('node-telegram-bot-api'),
+    port = process.env.PORT || 443,
+    host = '0.0.0.0',  // probably this change is not required
+    externalUrl = process.env.CUSTOM_ENV_VARIABLE || 'https://botrir.herokuapp.com/',
+    token = "2031323019:AAE9hiIng2APgdr03SQor9_6pamXDsVeGNI",
+    bot = new TelegramBot(token, { webHook: { port : port, host : host } });
+bot.setWebHook(externalUrl + ':443/bot' + token);
+
 let emoji = require("node-emoji").emoji;
 
 bot.on("message", (msg) => {

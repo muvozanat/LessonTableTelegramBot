@@ -1,10 +1,19 @@
-var TelegramBot = require('node-telegram-bot-api'),
-    port = process.env.PORT || 443,
-    host = '0.0.0.0',  // probably this change is not required
-    externalUrl = process.env.CUSTOM_ENV_VARIABLE || 'https://botrir.herokuapp.com/',
-    token = "2031323019:AAE9hiIng2APgdr03SQor9_6pamXDsVeGNI",
-    bot = new TelegramBot(token, { webHook: { port : port, host : host } });
-bot.setWebHook(externalUrl + ':443/bot' + token);
+process.env.NTBA_FIX_319 = 1;
+
+//Inserindo seu bot-Token na constante 'TOKEN'
+const TOKEN = process.env.TELEGRAM_TOKEN || '2031323019:AAE9hiIng2APgdr03SQor9_6pamXDsVeGNI';
+
+const TelegramBot = require('node-telegram-bot-api')
+const options = {
+  webHook: {
+    port: process.env.PORT
+  }
+};
+const url = process.env.APP_URL || 'https://rirbotuz.herokuapp.com:443';
+const bot = new TelegramBot(TOKEN, options);
+
+bot.setWebHook(`${url}/bot${TOKEN}`);
+
 
 let emoji = require("node-emoji").emoji;
 

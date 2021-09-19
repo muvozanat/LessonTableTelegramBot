@@ -1,7 +1,7 @@
 process.env.NTBA_FIX_319 = 1;
 
 //Inserindo seu bot-Token na constante 'TOKEN'
-const TOKEN = process.env.TELEGRAM_TOKEN || '2031323019:AAE9hiIng2APgdr03SQor9_6pamXDsVeGNI';
+const TOKEN ='2031323019:AAE9hiIng2APgdr03SQor9_6pamXDsVeGNI';
 
 const TelegramBot = require('node-telegram-bot-api')
 const options = {
@@ -9,7 +9,7 @@ const options = {
     port: process.env.PORT
   }
 };
-const url = process.env.APP_URL || 'https://rirbotuz.herokuapp.com:443';
+const url = 'https://rirbotuz.herokuapp.com:443';
 const bot = new TelegramBot(TOKEN, options);
 
 bot.setWebHook(`${url}/bot${TOKEN}`);
@@ -20,7 +20,7 @@ let emoji = require("node-emoji").emoji;
 bot.on("message", (msg) => {
   const text = msg.text;
   const chatId = msg.chat.id;
-  const name = "salom " + msg.chat.first_name + " " + emoji.smiley;
+  const name = "Salom kunni tanlang" ;
   if (text === "/start") {
     bot.sendMessage(chatId, name, {
       reply_markup: {

@@ -9,7 +9,7 @@ const options = {
     port: process.env.PORT
   }
 };
-const url = 'https://rirbotuz.herokuapp.com:443';
+const url = 'https://rirbotuzi.herokuapp.com:443';
 const bot = new TelegramBot(TOKEN, options);
 
 bot.setWebHook(`${url}/bot${TOKEN}`);

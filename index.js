@@ -1,10 +1,10 @@
-const TOKEN = process.env.TELEGRAM_TOKEN || '2031323019:AAE9hiIng2APgdr03SQor9_6pamXDsVeGNI';
-const TelegramBot = require('../..');
+const TOKEN = '2031323019:AAE9hiIng2APgdr03SQor9_6pamXDsVeGNI';
+const TelegramBot = require('node-telegram-api-bot');
 const options = {
   webHook: {
     // Port to which you should bind is assigned to $PORT variable
     // See: https://devcenter.heroku.com/articles/dynos#local-environment-variables
-    port: process.env.PORT
+    port: 443
     // you do NOT need to set up certificates since Heroku provides
     // the SSL certs already (https://<app-name>.herokuapp.com)
     // Also no need to pass IP because on Heroku you need to bind to 0.0.0.0
@@ -14,7 +14,7 @@ const options = {
 // Add URL of your app to env variable or enable Dyno Metadata
 // to get this automatically
 // See: https://devcenter.heroku.com/articles/dyno-metadata
-const url = process.env.APP_URL || 'https://rirbotuzi.herokuapp.com:443';
+const url = 'https://rirbotuzi.herokuapp.com:443';
 const bot = new TelegramBot(TOKEN, options);
 
 

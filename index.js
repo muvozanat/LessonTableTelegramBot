@@ -104,7 +104,7 @@ bot.on("message", (msg) => {
   if (text === `${emoji.arrow_right} Juma`) {
     bot.sendMessage(
       chatId,
-      `${emoji.one} Tizimlar va signallarni qayta ishlash (leksiya) <i>Masharipov O.</i> ${emoji.door} <b>314</b> \n${emoji.two} Murabbiylik soati ${emoji.door} <b>CS:GO</b>`,
+      `${emoji.one} Tizimlar va signallarni qayta ishlash (leksiya) <i>Masharipov O.</i> ${emoji.door} <b>314</b> \n${emoji.two} Murabbiylik soati ${emoji.door} <b>Ochiq xona</b>`,
       { parse_mode: "HTML" }
     );
   }
